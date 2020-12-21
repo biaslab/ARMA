@@ -1,16 +1,18 @@
 # ARMA
 
-Custom ForneyLab.jl factor node for an _a_uto_r_egressive model with _m_oving _a_verage.
+Composite ForneyLab.jl factor node for an *a*uto*r*egressive model with *m*oving *a*verage ([ARMA](https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model)).
+
+Note: this node assumes white noise error terms.
 
 ### Usage
 
-The node can be added to ForneyLab by running
+The node can be added to Julia as a development package via:
 
 ```julia
-] dev git@github.com:wmkouw/ARMA.git
+] dev https://github.com/wmkouw/ARMA.git
 ```
 
-in the REPL and then import
+Once added, it can be used in conjunction with ForneyLab by running:
 
 ```julia 
 using ForneyLab
