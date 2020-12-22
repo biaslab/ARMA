@@ -1,7 +1,7 @@
-module NARMAX
+module ARMA
 
-include("narmax_node_description.jl")
-include("narmax_rules_prototypes.jl")
-include("narmax_update_rules.jl")
+include("arma_node_description.jl")
+include("arma_rules_prototypes.jl")
+include("arma_update_rules.jl")
 
 end

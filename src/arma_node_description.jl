@@ -29,7 +29,7 @@ Interfaces:
 
 Construction:
 
-    AutoRegressiveMovingAverage(y, θ, z, r, τ, g=ϕ, id=:some_id)
+    AutoRegressiveMovingAverage(y, θ, z, r, τ, id=:some_id)
 """
 
 mutable struct AutoRegressiveMovingAverage <: SoftFactor
@@ -37,11 +37,9 @@ mutable struct AutoRegressiveMovingAverage <: SoftFactor
     interfaces::Vector{Interface}
     i::Dict{Symbol,Interface}
 
-    g::Function # Scalar function between autoregression coefficients and state variable
-
-    function AutoRegressiveMovingAverage(y, θ, z, r, τ; g::Function, id=generateId(AutoRegressiveMovingAverage))
+    function AutoRegressiveMovingAverage(y, θ, z, r, τ; id=generateId(AutoRegressiveMovingAverage))
         @ensureVariables(y, θ, z, r, τ)
-        self = new(id, Array{Interface}(undef, 7), Dict{Symbol,Interface}(), g)
+        self = new(id, Array{Interface}(undef, 5), Dict{Symbol,Interface}())
         addNode!(currentGraph(), self)
         self.i[:y] = self.interfaces[1] = associate!(Interface(self), y)
         self.i[:θ] = self.interfaces[2] = associate!(Interface(self), θ)
