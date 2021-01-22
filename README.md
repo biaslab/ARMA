@@ -9,7 +9,7 @@ Note: this node assumes white noise error terms.
 The node can be added to Julia as a development package via:
 
 ```julia
-] dev https://github.com/wmkouw/ARMA.git
+] dev https://github.com/biaslab/ARMA.git
 ```
 
 Once added, it can be used in conjunction with ForneyLab by running:
@@ -21,4 +21,4 @@ using ARMA
 
 ### Feedback
 
-Questions and comments can be left in the [issues](https://github.com/wmkouw/ARMA/issues) tracker.
+Questions and comments can be left in the [issues](https://github.com/biaslab/ARMA/issues) tracker.
