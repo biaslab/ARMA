@@ -38,8 +38,8 @@ function ruleVariationalARMAIn1PNPPP(marg_y :: ProbabilityDistribution{Univariat
 	mτ = unsafeMean(marg_τ)
 
 	# Parameters
-	Φ = [mz; mr]*[mz; mr]'
-	ϕ = [mz; mr]*my
+	Φ = mτ*[mz; mr]*[mz; mr]'
+	ϕ = mτ*[mz; mr]*my
 
 	# Set message
     return Message(Multivariate, GaussianWeightedMeanPrecision, xi=ϕ, w=Φ)
